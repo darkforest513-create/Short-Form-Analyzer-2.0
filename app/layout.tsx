@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "Whop App",
-	description: "My Whop App",
+	title: "Short Form Analyzer",
+	description: "Analyze why your short-form videos performed well or poorly. Premium creator tool for TikTok, Reels, and Shorts.",
 };
 
 export default function RootLayout({

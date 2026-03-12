@@ -8,8 +8,64 @@
 /* biome-ignore lint/suspicious/noUnknownAtRules: this rule is imported from whop */
 @config '../tailwind.config.ts';
 
+/* Premium Short Form Analyzer theme: dark glassmorphism, purple/blue glow */
+:root {
+	--background: #0a0a0f;
+	--foreground: #f4f4f5;
+	--glass-bg: rgba(255, 255, 255, 0.04);
+	--glass-border: rgba(255, 255, 255, 0.08);
+	--glass-highlight: rgba(255, 255, 255, 0.06);
+	--glow-purple: rgba(139, 92, 246, 0.4);
+	--glow-blue: rgba(59, 130, 246, 0.35);
+	--accent-purple: #8b5cf6;
+	--accent-blue: #3b82f6;
+	--accent-cyan: #06b6d4;
+	--text-muted: #a1a1aa;
+	--success: #22c55e;
+	--warning: #eab308;
+	--danger: #ef4444;
+}
+
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-geist-sans), system-ui, sans-serif;
+	min-height: 100vh;
+}
+
+/* Subtle gradient background for premium feel */
+.premium-bg {
+	background:
+		radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.15), transparent),
+		radial-gradient(ellipse 60% 40% at 100% 50%, rgba(59, 130, 246, 0.08), transparent),
+		radial-gradient(ellipse 60% 40% at 0% 50%, rgba(139, 92, 246, 0.06), transparent),
+		var(--background);
+}
+
+/* Glass panel base */
+.glass-panel {
+	background: var(--glass-bg);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid var(--glass-border);
+	box-shadow:
+		0 0 0 1px var(--glass-highlight) inset,
+		0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.glass-panel-hover:hover {
+	background: rgba(255, 255, 255, 0.06);
+	border-color: rgba(255, 255, 255, 0.12);
+	box-shadow:
+		0 0 0 1px var(--glass-highlight) inset,
+		0 0 24px rgba(139, 92, 246, 0.08);
+}
+
+/* Glow accent for focus/active */
+.glow-accent {
+	box-shadow: 0 0 20px var(--glow-purple);
+}
+
+.glow-accent-subtle {
+	box-shadow: 0 0 40px rgba(139, 92, 246, 0.12);
 }
